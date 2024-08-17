@@ -245,24 +245,26 @@ class BoardView(context: Context?, attrs: AttributeSet?) : View(context, attrs),
     }
 
     fun getSquareSizeWidth(width: Int): Int {
-        return width / 8
+        return width / 10
     }
 
     fun getSquareSizeHeight(height: Int): Int {
-        return height / 8
+        return height / 10
     }
 
     fun getXCoord(x: Int): Int {
-        return x0 + squareSize * if (flipped) 7 - x else x
+        return x0 + squareSize * if (flipped) 10 - x else x
     }
 
     fun getYCoord(y: Int): Int {
-        return y0 + squareSize * if (flipped) y else 7 - y
+        return y0 + squareSize * if (flipped) y else 10 - y
     }
 
     fun computeOrigins(width: Int, height: Int) {
-        this.x0 = (width - squareSize * 8) / 2
-        this.y0 = (height - squareSize * 8) / 2
+        this.x0 = (width - squareSize * 10) / 10
+        this.y0 = (height - squareSize * 10) / 10
+        this.x1 = (width - squareSize * 10) / 10
+        this.y1 = (height - squareSize * 10) / 10
     }
 
     fun tellAIToTakeGo() {
